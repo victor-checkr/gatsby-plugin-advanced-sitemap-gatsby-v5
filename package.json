@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-plugin-advanced-sitemap",
+  "name": "gatsby-plugin-advanced-sitemap-patch",
   "description": "Advanced plugin for generating configurable XML sitemaps with linked media for better SEO and human-readable XSL templates.",
   "version": "2.1.0",
   "license": "MIT",
