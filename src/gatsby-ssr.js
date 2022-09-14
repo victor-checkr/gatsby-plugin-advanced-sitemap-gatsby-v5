@@ -1,7 +1,6 @@
 import React from 'react';
 import { withPrefix } from 'gatsby';
 import defaultOptions from './defaults';
-
 exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
     let { output, createLinkInHead } = { ...defaultOptions, ...pluginOptions };
 
