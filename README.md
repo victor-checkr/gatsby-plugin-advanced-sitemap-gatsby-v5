@@ -1,22 +1,20 @@
-# gatsby-plugin-advanced-sitemap
+# gatsby-plugin-advanced-sitemap-patch
 
-The default Gatsby sitemap plugin generates a simple blob of raw XML for all your pages. This **advanced sitemap plugin** adds more power and configuration, generating a single or multiple sitemaps with full XSL templates to make them neatly organised and human + machine readable, as well linking image resources to encourage media indexing.
+It's a fork of thi plugin [advanced sitemap plugin](https://github.com/idjem/gatsby-plugin-advanced-sitemap).
+The difference it's :
 
-**Demo:** https://gatsby.ghost.org/sitemap.xml
-
+1. you have the traillingslash in the url.
+2. you have acces to all data from the query in the function **serializer**
 
 &nbsp;
-
-![example](https://user-images.githubusercontent.com/120485/53555088-d27a0280-3b73-11e9-88ca-fb4ec08d9d26.png)
 
 _NOTE: This plugin only generates output in `production` mode! To test, run: `gatsby build && gatsby serve`_
 
 &nbsp;
 
-
 ## Install
 
-`npm install --save gatsby-plugin-advanced-sitemap`
+`yarn add --save gatsby-plugin-advanced-sitemap-patch`
 
 ## How to Use
 
@@ -29,7 +27,7 @@ siteMetadata: {
     siteUrl: `https://www.example.com`,
 },
 plugins: [
-    `gatsby-plugin-advanced-sitemap`
+    `gatsby-plugin-advanced-sitemap-patch`
 ]
 ```
 
@@ -46,7 +44,7 @@ If you want to generate advanced, individually organised sitemaps based on your 
 
 plugins: [
     {
-        resolve: `gatsby-plugin-advanced-sitemap`,
+        resolve: `gatsby-plugin-advanced-sitemap-patch`,
         options: {
              // 1 query for each data type
             query: `
@@ -101,8 +99,10 @@ plugins: [
                     // Add a query level prefix to slugs, Don't get confused with global path prefix from Gatsby
                     // This will add a prefix to this particular sitemap only
                     prefix: 'your-prefix/',
-                    // Custom Serializer 
-                    serializer: (edges) => {
+                    // Custom Serializer
+                    serializer: (edges,dataQuery) => {
+                        // you can do something with all data from the query.
+                        // For exemple in allSitePages you don't have the date update.
                         return edges.map(({ node }) => {
                             (...) // Custom logic to change final sitemap.
                         })
@@ -141,33 +141,3 @@ plugins: [
     }
 ]
 ```
-
-Example output of ☝️ this exact config 👉 https://gatsby.ghost.org/sitemap.xml
-
-## Develop Plugin
-
-- Pull the repo
-
-1. Install dependencies
-
-```bash
-yarn install
-```
-
-Build Plugin
-
-```bash
-yarn build
-```
-
-Run Tests
-
-```bash
-yarn test
-```
-
-&nbsp;
-
-# Copyright & License
-
-Copyright (c) 2013-2022 [Ghost Foundation](https://ghost.org/) - Released under the [MIT license](LICENSE).
