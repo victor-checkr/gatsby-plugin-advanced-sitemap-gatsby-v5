@@ -27,7 +27,7 @@ siteMetadata: {
     siteUrl: `https://www.example.com`,
 },
 plugins: [
-    `gatsby-plugin-advanced-sitemap-patch`
+    `gatsby-plugin-advanced-sitemap-v5`
 ]
 ```
 
