@@ -14,7 +14,7 @@ _NOTE: This plugin only generates output in `production` mode! To test, run: `ga
 
 ## Install
 
-`yarn add --save gatsby-plugin-advanced-sitemap-patch`
+`yarn add --save gatsby-plugin-advanced-sitemap-v5`
 
 ## How to Use
 
