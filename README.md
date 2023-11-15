@@ -1,4 +1,4 @@
-# gatsby-plugin-advanced-sitemap-patch
+# gatsby-plugin-advanced-sitemap-v5
 
 It's a fork of thi plugin [advanced sitemap plugin](https://github.com/idjem/gatsby-plugin-advanced-sitemap).
 The difference it's :
